@@ -21,12 +21,21 @@ class Solution {
         //     }
         // }
         // return profit - buy;
-        int Buy = prices[0], profit = 0;
-        for (int i = 1; i < prices.length; i++) {
-            if (prices[i] > Buy) {
-                profit = Math.max(profit, prices[i] - Buy);
+        // int Buy = prices[0], profit = 0;
+        // for (int i = 1; i < prices.length; i++) {
+        //     if (prices[i] > Buy) {
+        //         profit = Math.max(profit, prices[i] - Buy);
+        //     }
+        //     Buy = Math.min(prices[i], Buy);
+        // }
+        // return profit;
+        int n = prices.length, buy = Integer.MAX_VALUE, profit = 0;
+        for (int i = 0; i < n ; i++) {
+            if (prices[i] < buy) {
+                buy = prices[i];
+
             }
-            Buy = Math.min(prices[i], Buy);
+            profit = Math.max(profit, prices[i] - buy);
         }
         return profit;
     }
