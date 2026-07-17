@@ -17,11 +17,8 @@ class Solution {
         String s2 = s.toLowerCase().replaceAll("[^a-z0-9]", "");
         int res = 0;
         for (int i = s2.length() - 1; i >= s2.length() / 2; i--) {
-            if (s1.charAt(i) == s2.charAt(s2.length() - 1 - i)) {
-                res = 1;
-            } else {
-                return false;
-            }
+            if (s1.charAt(i) != s2.charAt(s2.length() - 1 - i)) {
+                return false;}
         }
 
         return true;
