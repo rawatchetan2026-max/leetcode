@@ -1,6 +1,5 @@
 class Solution {
     public double myPow(double x, int n) {
-        long a = n;
         if(n == 0 ){
             return 1 ; 
         }
@@ -14,7 +13,7 @@ class Solution {
         }
         }
         if(n < 0){
-            a = -(long)n;
+        long a = -(long)n;
             halfSq = myPow(x , (int)(a / 2));
             ans = 1 /(halfSq * halfSq) ;
             if(n%2 != 0){
