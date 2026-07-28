@@ -1,6 +1,6 @@
 class Solution {
     public String smallestPalindrome(String s) {
-       StringBuilder sb = new StringBuilder("");
+      StringBuilder sb = new StringBuilder("");
         int n = s.length();
         if (n < 4) {
             return s;
@@ -12,21 +12,17 @@ class Solution {
 
         if (n % 2 != 0) {
             sb.append(s.substring(n/2,(n/2)+1));
-            char stoArr3[] = s.substring((n / 2) + 1, n).toCharArray();
-            Arrays.sort(stoArr3);
-            for (int i = stoArr3.length -1 ; i >= 0; i--) {
-                sb.append(stoArr3[i]);
+            for (int i = stoArr1.length -1 ; i >= 0; i--) {
+                sb.append(stoArr1[i]);
             }
         } else {
-            char stoArr2[] = s.substring(n / 2, n).toCharArray();
-            Arrays.sort(stoArr2);
-            for (int i = stoArr2.length - 1; i >= 0; i--) {
-                sb.append(stoArr2[i]);
+            for (int i = stoArr1.length - 1; i >= 0; i--) {
+                sb.append(stoArr1[i]);
             }
         }
 
-        String ans = sb.toString();
+       
 
-        return ans;
+        return  sb.toString();
     }
 }
